@@ -1,0 +1,30 @@
+form.Form {
+  margin-top: 30px;
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 30px;
+}
+.Form .btn {
+  background: #5dacbd;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 15px 0;
+  border: none;
+  height: 50px;
+}
+.Form .search-input {
+  background: #edf8f8;
+  border: none;
+  padding: 15px 20px;
+  display: inline-block;
+  border-radius: 6px;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  height: 50px;
+  line-height: 20px;
+}
+.Form .form-control:focus {
+  background: #edf8f8;
+}
+.Form .icon {
+  max-height: 70px;
+}

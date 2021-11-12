@@ -4,7 +4,7 @@ import "./WeatherInfo.css";
 export default function WeatherInfo() {
   let weatherData = {
     city: "Berlin",
-    date: "Thursday November 11, 2021 at 10:20",
+    date: "Friday November 12, 2021 at 16:46",
     description: "Overcast Clouds",
     imgURL: "http://openweathermap.org/img/wn/04d@2x.png",
     humidity: 89,
