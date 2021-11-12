@@ -1,0 +1,60 @@
+.WeatherInfo {
+  margin-top: 20px;
+}
+.WeatherInfo ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+  list-style: none;
+}
+.WeatherInfo li strong {
+  color: #5dacbd;
+  font-weight: 400;
+}
+.WeatherInfo h1 {
+  margin: 20px 0 10px;
+  line-height: 29px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 48px;
+  color: #24527a;
+}
+.WeatherInfo a {
+  text-decoration: none;
+  color: #24527a;
+  transition: ease-in-out 200ms;
+}
+
+.WeatherInfo a:hover {
+  color: #5dacbd;
+}
+.WeatherInfo .temperature {
+  color: #24527a;
+  font-weight: 400;
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 1;
+}
+.WeatherInfo .unit {
+  color: #212121;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1;
+  top: -40px;
+}
+.WeatherInfo .icon {
+  max-height: 70px;
+}
+.WeatherInfo .active:hover {
+  color: #24527a;
+  cursor: default;
+}
