@@ -1,5 +1,6 @@
 import React from "react";
 import "./WeatherInfo.css";
+import Forecast from "./Forecast";
 
 export default function WeatherInfo() {
   let weatherData = {
@@ -39,6 +40,13 @@ export default function WeatherInfo() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="row">
+        <Forecast />
+        <Forecast />
+        <Forecast />
+        <Forecast />
+        <Forecast />
       </div>
     </div>
   );

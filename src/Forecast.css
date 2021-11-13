@@ -1,0 +1,33 @@
+.Forecast .icon {
+  max-height: 70px;
+}
+
+.Forecast {
+  text-align: center;
+  margin: 40px 0;
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 50px;
+}
+.Forecast .forecast-time {
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  color: rgba(39, 33, 66, 0.4);
+  font-weight: bold;
+}
+
+.Forecast .forecast-temperature {
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #5dacbd;
+  font-weight: 700;
+}
+.Forecast .forecast-temperature-min {
+  margin-left: 10 px;
+  opacity: 0.6;
+}
+
+.Forecast .forecast-icon {
+  margin: 15px;
+}
