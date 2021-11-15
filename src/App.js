@@ -16,8 +16,7 @@ export default function App() {
   function handleResponse(response) {
     setWeatherData({
       loaded: true,
-      lat: response.data.coord.lat,
-      lon: response.data.coord.lon,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       imgURL: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
