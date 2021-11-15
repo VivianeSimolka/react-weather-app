@@ -37,10 +37,14 @@
 .WeatherInfo .temperature {
   color: #24527a;
   font-weight: 400;
-  margin-left: 10px;
+  margin-left: 20px;
   font-weight: 700;
-  font-size: 80px;
+  font-size: 84px;
   line-height: 1;
+}
+.WeatherInfo canvas {
+  position: relative;
+  bottom: 0;
 }
 .WeatherInfo .unit {
   color: #212121;
@@ -49,11 +53,9 @@
   font-weight: 400;
   position: relative;
   line-height: 1;
-  top: -40px;
+  top: -44px;
 }
-.WeatherInfo .icon {
-  max-height: 70px;
-}
+
 .WeatherInfo .active:hover {
   color: #24527a;
   cursor: default;

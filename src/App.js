@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import axios from "axios";
 
 export default function App() {
+  const apiKey = "6810fbd82d0a172a870e47bd04543f6c";
   const [weatherData, setWeatherData] = useState({ loaded: false });
   const [city, setCity] = useState("Berlin");
   // const [unit, setUnit] = useState("metric");
@@ -15,6 +16,8 @@ export default function App() {
   function handleResponse(response) {
     setWeatherData({
       loaded: true,
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lon,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       imgURL: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
@@ -27,7 +30,6 @@ export default function App() {
   }
 
   function callAPI() {
-    const apiKey = "485e84787811d6e504c528765edb36fe";
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
     axios.get(apiURL).then(handleResponse);
   }
