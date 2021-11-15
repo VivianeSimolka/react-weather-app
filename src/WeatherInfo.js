@@ -23,7 +23,7 @@ export default function WeatherInfo(props) {
         </div>
         <div className="col-5">
           <div className="temperature-container align-items-center d-flex justify-content-end">
-            <WeatherAnimation icon={props.weatherData.icon} />
+            <WeatherAnimation icon={props.weatherData.icon} size={70} />
             <div>
               <span className="temperature">
                 {Math.round(props.weatherData.temperature)}
@@ -39,11 +39,7 @@ export default function WeatherInfo(props) {
         </div>
       </div>
       <div className="row">
-        <Forecast />
-        <Forecast />
-        <Forecast />
-        <Forecast />
-        <Forecast />
+        <Forecast lat={props.weatherData.lat} lon={props.weatherData.lon} />
       </div>
     </div>
   );
