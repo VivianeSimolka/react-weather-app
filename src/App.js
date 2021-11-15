@@ -14,7 +14,7 @@ export default function App() {
           <Geopositioning />
           <Form />
           <br />
-          <WeatherInfo />
+          <WeatherInfo defaultCity="Berlin" />
           <br />
           <Footer />
         </div>

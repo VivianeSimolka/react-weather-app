@@ -11,6 +11,7 @@ export default function Form() {
             placeholder="Please type a city"
             autoComplete="off"
             className="form-control search-input"
+            autoFocus="on"
           />
         </div>
         <div className="col-3">
