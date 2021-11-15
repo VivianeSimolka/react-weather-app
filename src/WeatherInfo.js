@@ -1,73 +1,53 @@
-import React, { useState } from "react";
+import React from "react";
 import "./WeatherInfo.css";
 import Forecast from "./Forecast";
 import FormattedDate from "./FormattedDate";
-import axios from "axios";
 
 export default function WeatherInfo(props) {
-  const apiKey = "485e84787811d6e504c528765edb36fe";
-  const [weatherData, setWeatherData] = useState({ loaded: false });
-  const [city, setCity] = useState(props.defaultCity);
-  const [unit, setUnit] = useState("metric");
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=${unit}&appid=${apiKey}`;
-
-  function handleResponse(response) {
-    setWeatherData({
-      loaded: true,
-      date: new Date(response.data.dt * 1000),
-      description: response.data.weather[0].description,
-      imgURL: "http://openweathermap.org/img/wn/04d@2x.png",
-      humidity: response.data.main.humidity,
-      wind: response.data.wind.speed,
-      temperature: response.data.main.temp,
-    });
-  }
-
-  if (weatherData.loaded) {
-    return (
-      <div className="WeatherInfo">
-        <div className="row">
-          <div className="col-6">
-            <h1>{city}</h1>
-            <ul>
-              <li>
-                <FormattedDate date={weatherData.date} />
-              </li>
-              <li className="text-capitalize">
-                {weatherData.description}, Humidity:
-                <strong> {weatherData.humidity}%</strong>, Wind:
-                <strong> {weatherData.wind}km/h</strong>
-              </li>
-            </ul>
-          </div>
-          <div className="col-6">
-            <div className="temperature-container align-items-center d-flex justify-content-end">
-              <img src={weatherData.imgURL} alt={weatherData.description} />
-              <div>
-                <span className="temperature">
-                  {Math.round(weatherData.temperature)}
-                </span>
-                <span className="unit">
-                  <a href="/" className="active">
-                    °C
-                  </a>{" "}
-                  |<a href="/">°F</a>
-                </span>
-              </div>
+  console.log(props.weatherData);
+  return (
+    <div className="WeatherInfo">
+      <div className="row">
+        <div className="col-7">
+          <h1>{props.weatherData.city}</h1>
+          <ul>
+            <li>
+              <FormattedDate date={props.weatherData.date} />
+            </li>
+            <li className="text-capitalize">
+              {props.weatherData.description}, Humidity:
+              <strong> {props.weatherData.humidity}%</strong>, Wind:
+              <strong> {props.weatherData.wind}km/h</strong>
+            </li>
+          </ul>
+        </div>
+        <div className="col-5">
+          <div className="temperature-container align-items-center d-flex justify-content-end">
+            <img
+              src={props.weatherData.imgURL}
+              alt={props.weatherData.description}
+            />
+            <div>
+              <span className="temperature">
+                {Math.round(props.weatherData.temperature)}
+              </span>
+              <span className="unit">
+                <a href="/" className="active">
+                  °C
+                </a>{" "}
+                |<a href="/">°F</a>
+              </span>
             </div>
           </div>
         </div>
-        <div className="row">
-          <Forecast />
-          <Forecast />
-          <Forecast />
-          <Forecast />
-          <Forecast />
-        </div>
       </div>
-    );
-  } else {
-    axios.get(apiURL).then(handleResponse);
-    return "Loading...";
-  }
+      <div className="row">
+        <Forecast />
+        <Forecast />
+        <Forecast />
+        <Forecast />
+        <Forecast />
+      </div>
+    </div>
+  );
 }

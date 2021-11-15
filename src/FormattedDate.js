@@ -38,5 +38,9 @@ export default function FormattedDate(props) {
     minutes = `0${minutes}`;
   }
 
-  return `${day} ${month} ${dayNumber}, ${year} at ${hours}:${minutes}`;
+  return (
+    <div>
+      {day} {month} {dayNumber}, {year} at {hours}:{minutes}
+    </div>
+  );
 }
