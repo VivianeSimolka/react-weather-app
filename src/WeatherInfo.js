@@ -4,7 +4,6 @@ import Forecast from "./Forecast";
 import FormattedDate from "./FormattedDate";
 
 export default function WeatherInfo(props) {
-  console.log(props.weatherData);
   return (
     <div className="WeatherInfo">
       <div className="row">

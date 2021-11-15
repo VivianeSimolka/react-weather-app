@@ -17,7 +17,7 @@ export default function App() {
       loaded: true,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      imgURL: "http://openweathermap.org/img/wn/04d@2x.png",
+      imgURL: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       temperature: response.data.main.temp,
