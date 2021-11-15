@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./WeatherInfo.css";
 import Forecast from "./Forecast";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
 export default function WeatherInfo(props) {
@@ -13,7 +14,7 @@ export default function WeatherInfo(props) {
   function handleResponse(response) {
     setWeatherData({
       loaded: true,
-      date: "Friday November 12, 2021 at 16:46",
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       imgURL: "http://openweathermap.org/img/wn/04d@2x.png",
       humidity: response.data.main.humidity,
@@ -29,7 +30,9 @@ export default function WeatherInfo(props) {
           <div className="col-6">
             <h1>{city}</h1>
             <ul>
-              <li>{weatherData.date}</li>
+              <li>
+                <FormattedDate date={weatherData.date} />
+              </li>
               <li className="text-capitalize">
                 {weatherData.description}, Humidity:
                 <strong> {weatherData.humidity}%</strong>, Wind:
