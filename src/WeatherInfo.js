@@ -38,9 +38,7 @@ export default function WeatherInfo(props) {
           </div>
         </div>
       </div>
-      <div className="row">
-        <Forecast coordinates={props.weatherData.coordinates} />
-      </div>
+      <Forecast coordinates={props.weatherData.coordinates} />
     </div>
   );
 }
