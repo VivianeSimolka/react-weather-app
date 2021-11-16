@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Forecast.css";
 import DailyForecast from "./DailyForecast";
 
@@ -10,11 +10,15 @@ export default function Forecast(props) {
   let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.coordinates.lat}&lon=${props.coordinates.lon}&appid=${apiKey}&units=${unit}`;
 
   let [forecastData, setForecastData] = useState(null);
-  let [loaded, setloaded] = useState(false);
+  let [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
 
   function handleResponse(response) {
     setForecastData(response.data.daily);
-    setloaded(true);
+    setLoaded(true);
   }
 
   if (loaded) {
