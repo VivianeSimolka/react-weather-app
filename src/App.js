@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import Geopositioning from "./Geopositioning";
 import WeatherInfo from "./WeatherInfo";
 import Footer from "./Footer";
 import axios from "axios";
@@ -10,7 +9,6 @@ export default function App() {
   const apiKey = "6810fbd82d0a172a870e47bd04543f6c";
   const [weatherData, setWeatherData] = useState({ loaded: false });
   const [city, setCity] = useState("Berlin");
-  // const [unit, setUnit] = useState("metric");
   let unit = "metric";
 
   function handleResponse(response) {
@@ -47,7 +45,6 @@ export default function App() {
       <div className="App">
         <div className="container">
           <div className="Weather">
-            <Geopositioning />
             <form className="Form" onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-9">

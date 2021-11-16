@@ -1,5 +1,4 @@
 import React from "react";
-import "./Geopositioning.css";
 
 export default function Geopositioning() {
   return (
