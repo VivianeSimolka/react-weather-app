@@ -28,12 +28,7 @@ export default function WeatherInfo(props) {
               <span className="temperature">
                 {Math.round(props.weatherData.temperature)}
               </span>
-              <span className="unit">
-                <a href="/" className="active">
-                  °C
-                </a>{" "}
-                |<a href="/">°F</a>
-              </span>
+              <span className="unit">°C</span>
             </div>
           </div>
         </div>

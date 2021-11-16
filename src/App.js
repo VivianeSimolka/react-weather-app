@@ -69,9 +69,7 @@ export default function App() {
                 </div>
               </div>
             </form>
-            <br />
             <WeatherInfo weatherData={weatherData} />
-            <br />
             <Footer />
           </div>
         </div>

@@ -56,11 +56,6 @@
   top: -44px;
 }
 
-.WeatherInfo .active:hover {
-  color: #24527a;
-  cursor: default;
-}
-
 .WeatherInfo .temperature-container {
   float: inline-end;
 }
