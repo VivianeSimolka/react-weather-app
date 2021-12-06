@@ -14,7 +14,6 @@ export default function Geopositioning() {
             Search my location
           </a>
         </div>
-        <div className="col-3 hidden-message"></div>
       </div>
     </div>
   );
